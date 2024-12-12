@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "gRPC.Client";
+
+package order;
+
+service Orderer {
+  rpc GetOrder(OrderRequest) returns (OrderResponse);
+}
+
+message OrderRequest {
+  string orderId = 1;
+}
+
+message OrderResponse {
+  string message = 1;
+}
